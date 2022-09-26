@@ -1,0 +1,56 @@
+@use "../../scss/breakpoints.scss" as b;
+@use "../../scss/functions.scss" as f;
+
+.successBoard {
+  width: 100%;
+  padding: 1.4rem;
+  box-shadow: 0px 10px 25px rgba(29, 52, 54, 0.08);
+  margin-top: 30px;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      color: var(--pri__cyan);
+      font-weight: 600;
+    }
+
+    .icon {
+      color: hsla(214, 20%, 21%, 0.326);
+      font-size: f.rem(30);
+    }
+  }
+
+  .progress-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .progress {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+
+    &__circle {
+      width: clamp(30px, 17vw, 100px);
+      height: clamp(30px, 17vw, 100px);
+      border-radius: 50%;
+      border: 2px solid var(--pri__cyan);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+
+      & p {
+        color: var(--pri__cyan);
+        font-size: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+        font-weight: 600;
+      }
+    }
+  }
+}

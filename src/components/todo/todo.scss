@@ -1,0 +1,53 @@
+@use "../../scss/breakpoints.scss" as b;
+@use "../../scss/functions.scss" as f;
+
+.todo {
+  display: flex;
+  padding: 15px;
+  border: 0.1px solid hsla(214, 20%, 21%, 0.114);
+  border-radius: 10px;
+  margin-top: f.rem(20);
+  cursor: pointer;
+
+  p {
+    font-style: 14px;
+    font-weight: 300;
+    // cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    margin-right: f.rem(10);
+    display: none;
+    cursor: pointer;
+  }
+
+  &__btns {
+    margin-left: auto;
+
+    .icon {
+      font-size: f.rem(18);
+      display: none;
+      cursor: pointer;
+
+      &.edit {
+        margin-right: f.rem(10);
+        color: var(--light-theme__dark);
+      }
+
+      &.delete {
+        color: var(--pri__red);
+      }
+    }
+  }
+
+  &:hover {
+    input[type="checkbox"],
+    .icon {
+      display: inline-block;
+    }
+  }
+}
+
+.todo + .todo {
+  margin-top: 10px;
+}

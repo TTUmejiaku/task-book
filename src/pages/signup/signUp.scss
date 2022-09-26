@@ -1,0 +1,130 @@
+@use "../../scss/breakpoints.scss" as b;
+@use "../../scss/functions.scss" as f;
+
+.sign-up,
+.login {
+  min-height: 100vh;
+  padding: f.rem(20);
+
+  .title {
+    text-align: center;
+    color: var(--pri__cyan);
+  }
+
+  .success-message {
+    color: #29a19c;
+    padding: f.rem(10) 0 f.rem(10) f.rem(15);
+    background-color: hsla(178, 52%, 56%, 0.252);
+  }
+
+  .error-message {
+    color: rgb(139, 12, 12);
+    padding: f.rem(10) 0 f.rem(10) f.rem(15);
+    background-color: #f0545465;
+  }
+
+  .form {
+    width: 50%;
+    max-width: f.rem(350);
+    margin: f.rem(200) auto 0;
+    padding: f.rem(20);
+    box-shadow: 0px 10px 25px rgba(29, 52, 54, 0.08);
+    // text-align: center;
+
+    &__field,
+    &__error,
+    &__label {
+      display: block;
+      width: 100%;
+    }
+
+    &__field {
+      border: 0.3px solid hsla(240, 27%, 22%, 0.122);
+      padding: f.rem(10) 0 f.rem(10) f.rem(15);
+      border-radius: f.rem(8);
+
+      &.error {
+        border: 1px solid var(--pri__red);
+        color: var(--pri__red);
+      }
+
+      &::placeholder {
+        font-size: f.rem(14);
+        color: hsla(240, 27%, 22%, 0.335);
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid var(--pri__yellow);
+      }
+    }
+
+    &__error {
+      color: var(--pri__red);
+    }
+
+    &__btn {
+      background: var(--pri__cyan);
+      min-width: 30%;
+      display: block;
+      color: white;
+      padding: f.rem(10);
+      border-radius: f.rem(10);
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+
+    &__link {
+      display: block;
+      text-align: center;
+
+      a {
+        color: var(--pri__cyan);
+      }
+    }
+
+    .forgot-password {
+      display: block;
+      text-align: center;
+      color: var(--pri__cyan);
+    }
+
+    &__divider {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: hsla(240, 27%, 22%, 0.335);
+
+      .left,
+      .right {
+        width: 43%;
+        height: 1px;
+        background-color: hsla(240, 27%, 22%, 0.264);
+        display: inline-block;
+      }
+    }
+
+    &__socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: f.rem(10);
+
+      .icon {
+        font-size: f.rem(32);
+        cursor: pointer;
+      }
+
+      .facebook {
+        color: rgb(26%, 40%, 70%);
+      }
+
+      .twitter {
+        color: #0080ff;
+      }
+    }
+  }
+}

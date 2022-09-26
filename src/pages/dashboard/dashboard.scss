@@ -1,0 +1,44 @@
+@use "../../scss/breakpoints.scss" as b;
+@use "../../scss/functions.scss" as f;
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  margin-block: f.rem(20) f.rem(36);
+  position: relative;
+
+  .tasks-wrapper {
+    width: 100%;
+    padding: 1.4rem;
+    box-shadow: 0px 10px 25px rgba(29, 52, 54, 0.08);
+    margin-top: 30px;
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: f.rem(20);
+
+      h3 {
+        color: var(--pri__cyan);
+        font-weight: 600;
+      }
+
+      .icon.threeDots {
+        color: hsla(214, 20%, 21%, 0.326);
+        font-size: 30px;
+      }
+    }
+  }
+
+  @include b.mq-down(large) {
+    flex-direction: column;
+  }
+
+  @include b.mq-up(large) {
+    .col {
+      width: 48%;
+    }
+  }
+}

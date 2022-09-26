@@ -1,0 +1,135 @@
+@use "./breakpoints.scss" as b;
+@use "./functions.scss" as f;
+
+body {
+  font-family: var(--ff);
+  background-color: var(--light-theme__bg);
+}
+
+.sharedLayout {
+  display: flex;
+
+  .body-wrapper {
+    width: 100%;
+
+    @include b.mq-up(large) {
+      width: 88%;
+      margin-left: auto;
+    }
+  }
+}
+
+.app.dark {
+  background-color: var(--dark-theme__bg);
+  color: var(--dark-theme__white);
+
+  .sidebar {
+    background-color: var(--dark-theme__card);
+    border: 1px solid var(--dark-theme__card);
+
+    .link {
+      color: var(--dark-theme__white);
+    }
+  }
+
+  .successBoard,
+  .tasks-wrapper,
+  .taxi-taxi,
+  .observation,
+  .fact,
+  .charts {
+    background-color: var(--dark-theme__card);
+    border: 1px solid var(--dark-theme__card);
+    border-radius: f.rem(10);
+    overflow: hidden;
+  }
+
+  .todo {
+    border: 0.5px solid hsla(0, 0%, 98%, 0.152);
+    .edit {
+      color: var(--dark-theme__white);
+    }
+  }
+
+  .toggle-menu {
+    background-color: var(--dark-theme__bg);
+    box-shadow: 0 0 10px hsl(216, 19%, 21%);
+
+    .list-wrapper {
+      color: var(--dark-theme__white);
+    }
+  }
+
+  .dark-overlay {
+    background-color: rgba(0, 0, 0, 0.343);
+
+    .modal {
+      background-color: var(--dark-theme__card);
+
+      input,
+      select {
+        background-color: hsla(215, 16%, 36%, 0.308);
+
+        &::placeholder {
+          color: #f9f9f979;
+        }
+      }
+
+      .save {
+        color: var(--dark-theme__white);
+      }
+
+      .cancel.editing {
+        color: var(--dark-theme__white);
+        background-color: var(--dark-theme__bg);
+      }
+      .save.editing {
+        color: var(--dark-theme__white);
+        background-color: var(--pri__cyan);
+      }
+    }
+  }
+
+  .form {
+    background-color: var(--dark-theme__card);
+
+    input,
+    select {
+      background-color: hsla(215, 16%, 36%, 0.308);
+      color: hsla(0, 0%, 98%, 0.768);
+
+      &::placeholder {
+        color: #f9f9f979;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: f.rem(1300);
+  width: 90%;
+}
+
+.mt-10 {
+  margin-top: f.rem(10);
+}
+
+.mt-16 {
+  margin-top: f.rem(16);
+}
+
+.mt-20 {
+  margin-top: f.rem(20);
+}
+
+.mt-30 {
+  margin-top: f.rem(30);
+}
+
+.mt-50 {
+  margin-top: f.rem(50);
+}
+
+.m-auto {
+  margin-inline: auto;
+}

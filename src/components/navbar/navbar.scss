@@ -1,0 +1,73 @@
+@use "../../scss/breakpoints.scss" as b;
+@use "../../scss/functions.scss" as f;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+  margin-top: f.rem(20);
+  position: relative;
+
+  .btn {
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    background-color: var(--pri__cyan);
+    font-family: inherit;
+    color: var(--light-theme__white);
+    border-radius: 8px;
+    cursor: pointer;
+
+    .icon.circle-plus {
+      color: var(--light-theme__white);
+      margin-right: 10px;
+      font-size: 18px;
+    }
+  }
+
+  .icon.moon {
+    font-size: 24px;
+    cursor: pointer;
+    color: hsla(214, 20%, 21%, 0.483);
+    display: none;
+
+    @include b.mq-up(medium) {
+      display: block;
+    }
+  }
+
+  .icon.dark-mode {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--dark-theme__white);
+    display: none;
+
+    @include b.mq-up(medium) {
+      display: block;
+    }
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+      display: none;
+    }
+
+    .icon.arrow-down {
+      font-size: 24px;
+      color: var(--pri__cyan);
+      cursor: pointer;
+    }
+
+    @include b.mq-up(medium) {
+      p {
+        display: block;
+      }
+    }
+  }
+}

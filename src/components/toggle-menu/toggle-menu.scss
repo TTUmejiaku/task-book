@@ -1,0 +1,33 @@
+@use "../../scss/breakpoints.scss" as b;
+@use "../../scss/functions.scss" as f;
+
+.toggle-menu {
+  position: absolute;
+  top: 120%;
+  right: -5%;
+  background-color: var(--dark-theme__white);
+  padding: 0 f.rem(30) f.rem(25);
+  box-shadow: 0px 10px 25px rgba(29, 52, 54, 0.08);
+  border-radius: f.rem(10);
+  z-index: 10;
+
+  .list-wrapper {
+    display: flex;
+    gap: f.rem(10);
+    margin-top: f.rem(25);
+    color: var(--light-theme__dark);
+
+    &.premium {
+      color: var(--pri__cyan);
+    }
+
+    &.profile {
+      text-decoration: none;
+      // color: var(--light-theme__dark);
+    }
+
+    &.logout {
+      cursor: pointer;
+    }
+  }
+}

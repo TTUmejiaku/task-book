@@ -1,0 +1,20 @@
+:root {
+  // Base colors
+  --pri__cyan: #29a19c;
+  // --pri__cyan: #2ba7a2;
+  --pri__yellow: #ecca75;
+  --pri__red: #f05454;
+
+  // light-theme
+  --light-theme__dark: hsl(240, 27%, 22%);
+  --light-theme__bg: hsl(0, 0%, 98%);
+  --light-theme__white: hsl(0, 0%, 100%);
+
+  // dark-theme
+  --dark-theme__card: hsl(216, 19%, 21%);
+  --dark-theme__bg: hsl(216, 18%, 16%);
+  --dark-theme__white: #f9f9f9;
+
+  // Fonts
+  --ff: "Nunito", sans-serif;
+}

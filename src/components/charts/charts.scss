@@ -1,0 +1,18 @@
+@use "../../scss/breakpoints.scss" as b;
+@use "../../scss/functions.scss" as f;
+
+.charts {
+  width: 100%;
+  padding: 1.6rem;
+  box-shadow: 0px 10px 25px rgba(29, 52, 54, 0.08);
+  margin-top: 30px;
+
+  .title {
+    color: var(--pri__cyan);
+    font-weight: 600;
+  }
+
+  .chart {
+    margin-top: 20px;
+  }
+}

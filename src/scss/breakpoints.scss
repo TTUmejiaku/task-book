@@ -1,0 +1,25 @@
+@use "./functions.scss" as f;
+
+$breakpoint-up: (
+  "medium": f.rem(600),
+  "large": f.rem(900),
+  "xlarge": f.rem(1100),
+);
+
+$breakpoint-down: (
+  "medium": f.rem(599.98),
+  "large": f.rem(899.98),
+  "xlarge": f.rem(1099.98),
+);
+
+@mixin mq-up($size) {
+  @media (min-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}
+
+@mixin mq-down($size) {
+  @media (max-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}
