@@ -24,12 +24,11 @@
   }
 
   .form {
-    width: 50%;
-    max-width: f.rem(350);
+    width: 95%;
+    max-width: f.rem(375);
     margin: f.rem(200) auto 0;
     padding: f.rem(20);
     box-shadow: 0px 10px 25px rgba(29, 52, 54, 0.08);
-    // text-align: center;
 
     &__field,
     &__error,

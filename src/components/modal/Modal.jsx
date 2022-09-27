@@ -15,7 +15,7 @@ const Modal = ({ addTask, editTask }) => {
     handleChangeOnEdit,
   } = useFormContext();
 
-  const handleSubmit = (e) => {
+  const handleSubmitViewing = (e) => {
     e.preventDefault();
     if (!formData.task) return;
     addTask(formData);
@@ -25,9 +25,10 @@ const Modal = ({ addTask, editTask }) => {
       date: "",
       priority: "",
     });
+    toggleModal();
   };
 
-  const handleSubmitOnChange = (e) => {
+  const handleSubmitOnEdit = (e) => {
     e.preventDefault();
     if (!newFormData.task) return;
     editTask(taskId, newFormData);
@@ -40,7 +41,7 @@ const Modal = ({ addTask, editTask }) => {
     toggleModalAndIsEditing();
   };
 
-  function clearViewingTemplateForm() {
+  function clearAddTaskTemplateFormData() {
     toggleModal();
     setFormData({
       task: "",
@@ -49,7 +50,7 @@ const Modal = ({ addTask, editTask }) => {
       priority: "",
     });
   }
-  function clearEditingTemplateForm() {
+  function clearEditTaskTemplateFormData() {
     toggleModalAndIsEditing();
     setNewFormData({
       task: "",
@@ -59,13 +60,13 @@ const Modal = ({ addTask, editTask }) => {
     });
   }
 
-  const viewingTemplate = (
+  const addTaskTemplate = (
     <div className="dark-overlay">
       <div className="modal ">
         <h3 className="title">Add a new task</h3>
 
         {/* Form element */}
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmitViewing}>
           <div className="form__group">
             <label htmlFor="">What should be done</label>
             <input
@@ -119,7 +120,7 @@ const Modal = ({ addTask, editTask }) => {
             <button
               type="button"
               className="btn cancel"
-              onClick={clearViewingTemplateForm}
+              onClick={clearAddTaskTemplateFormData}
             >
               Cancel
             </button>
@@ -135,13 +136,13 @@ const Modal = ({ addTask, editTask }) => {
     </div>
   );
 
-  const editingTemplate = (
+  const editTaskTemplate = (
     <div className="dark-overlay">
       <div className="modal ">
         <h3 className="title">Edit task</h3>
 
         {/* Form element */}
-        <form className="form" onSubmit={handleSubmitOnChange}>
+        <form className="form" onSubmit={handleSubmitOnEdit}>
           <div className="form__group">
             <label htmlFor="">What should be done</label>
             <input
@@ -195,7 +196,7 @@ const Modal = ({ addTask, editTask }) => {
             <button
               type="button"
               className="btn cancel editing"
-              onClick={clearEditingTemplateForm}
+              onClick={clearEditTaskTemplateFormData}
             >
               Cancel
             </button>
@@ -208,7 +209,7 @@ const Modal = ({ addTask, editTask }) => {
     </div>
   );
 
-  return <>{isEditing ? editingTemplate : viewingTemplate}</>;
+  return <>{isEditing ? editTaskTemplate : addTaskTemplate}</>;
 };
 
 export default Modal;

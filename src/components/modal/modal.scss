@@ -22,7 +22,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: f.rem(700);
-  width: 60vw;
+  width: 95vw;
   border-radius: f.rem(10);
 
   .title {
@@ -52,19 +52,27 @@
 
     &__select {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       margin-top: f.rem(30);
       width: 100%;
 
+      @include b.mq-up(large) {
+        flex-direction: row;
+      }
+
       .form__group {
-        width: 30%;
-        gap: f.rem(10);
+        margin-top: f.rem(20);
 
         select {
           border-radius: f.rem(8);
           border: 1px solid hsla(240, 27%, 22%, 0.267);
           padding: f.rem(8) f.rem(15);
           background: transparent;
+        }
+
+        @include b.mq-up(large) {
+          width: 30%;
         }
       }
     }

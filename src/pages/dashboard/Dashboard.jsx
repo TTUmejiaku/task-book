@@ -3,12 +3,16 @@ import "./dashboard.scss";
 import { SuccessBoard, SidebarRight, Charts } from "../../components";
 import { BsThreeDots } from "react-icons/bs";
 
-const Dashboard = ({ tasksList }) => {
+const Dashboard = ({ tasksList, taskCount, activeCount, completedCount }) => {
   return (
     <>
       <main className="dashboard container ">
         <div className="col">
-          <SuccessBoard />
+          <SuccessBoard
+            taskCount={taskCount}
+            activeCount={activeCount}
+            completedCount={completedCount}
+          />
           <div className="tasks-wrapper">
             <div className="title">
               <h3>Active</h3>

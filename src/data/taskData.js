@@ -7,7 +7,7 @@ const taskData = [
   {
     id: 2,
     name: "Clear blockage in the sink",
-    completed: true,
+    completed: false,
   },
   {
     id: 3,
@@ -17,7 +17,7 @@ const taskData = [
   {
     id: 4,
     name: "Defrost refrigerator",
-    completed: true,
+    completed: false,
   },
 ];
 

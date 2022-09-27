@@ -1,6 +1,5 @@
 import React, { createRef } from "react";
 import { Formik, Form } from "formik";
-import "./login.scss";
 import { loginSchema } from "../../schemas/formSchema";
 import { TextInput } from "../../components/customInputs";
 import logo from "../../assets/logo.svg";
@@ -49,12 +48,12 @@ const Login = () => {
               actions.resetForm();
               navigate("/dashboard");
               setSuccessMessage("");
-            }, 2000);
+            }, 1000);
           } catch (error) {
             setErrorMessage(error.message);
             setTimeout(() => {
               setErrorMessage("");
-            }, 2000);
+            }, 1000);
           }
         }}
       >

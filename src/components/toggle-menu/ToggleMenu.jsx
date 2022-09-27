@@ -4,7 +4,7 @@ import { FiUser, FiMoon, FiSettings, FiStar, FiLogOut } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useUserAuthContext } from "../../contexts/AuthContext";
 
-const ToggleMenu = () => {
+const ToggleMenu = ({ toggleDarkMode }) => {
   const { logOut } = useUserAuthContext();
 
   return (
@@ -16,7 +16,7 @@ const ToggleMenu = () => {
         </Link>
         <div className="list-wrapper">
           <FiMoon />
-          <p>Dark mode</p>
+          <p onClick={toggleDarkMode}>Dark mode</p>
         </div>
         <div className="list-wrapper">
           <FiSettings />

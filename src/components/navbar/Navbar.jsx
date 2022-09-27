@@ -35,7 +35,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           <p>Have a good day, Sally</p>
           <img src={avatar} alt="" />
           <IoIosArrowDown className="icon arrow-down" onClick={toggleMenu} />
-          {showMenu && <ToggleMenu />}
+          {showMenu && <ToggleMenu toggleDarkMode={toggleDarkMode} />}
         </div>
       </nav>
     </>

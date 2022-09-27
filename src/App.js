@@ -48,6 +48,7 @@ function App() {
           completed={task.completed}
           editedTask={editTask}
           deleteTask={deleteTask}
+          toggleCheck={toggleCheck}
         />
       );
     });
@@ -63,9 +64,17 @@ function App() {
           completed={task.completed}
           editedTask={editTask}
           deleteTask={deleteTask}
+          toggleCheck={toggleCheck}
         />
       );
     });
+
+  function toggleCheck(id) {
+    const editedTask = tasks.map((task) => {
+      return id === task.id ? { ...task, completed: !task.completed } : task;
+    });
+    setTasks(editedTask);
+  }
 
   const toggleDarkMode = () => {
     setDarkMode((prevState) => !prevState);
@@ -103,6 +112,9 @@ function App() {
                         completedTasksList: completedTasksList,
                         activeTasksList: activeTasksList,
                       }}
+                      taskCount={tasks.length}
+                      activeCount={activeTasksList.length}
+                      completedCount={completedTasksList.length}
                     />
                   </ProtectedRoute>
                 }

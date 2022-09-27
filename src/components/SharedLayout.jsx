@@ -6,7 +6,8 @@ import { useContext } from "react";
 import ModalContext from "../contexts/ModalContext";
 import { FormContextProvider } from "../contexts/FormContext";
 
-const SharedLayout = ({ addTask, editTask, darkMode, toggleDarkMode }) => {
+const SharedLayout = (props) => {
+  const { addTask, editTask, darkMode, toggleDarkMode } = props;
   const { isShowModal } = useContext(ModalContext);
 
   isShowModal

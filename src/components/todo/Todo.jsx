@@ -4,7 +4,7 @@ import { FiEdit } from "react-icons/fi";
 import { AiOutlineDelete } from "react-icons/ai";
 import ModalContext from "../../contexts/ModalContext";
 
-const Todo = ({ id, name, completed, deleteTask }) => {
+const Todo = ({ id, name, completed, deleteTask, toggleCheck }) => {
   const { toggleModalAndIsEditing } = useContext(ModalContext);
 
   return (
@@ -13,7 +13,12 @@ const Todo = ({ id, name, completed, deleteTask }) => {
         className="todo"
         style={{ textDecoration: completed ? "line-through" : "none" }}
       >
-        <input type="checkbox" id={id} defaultChecked={completed} />
+        <input
+          type="checkbox"
+          id={id}
+          defaultChecked={completed}
+          onClick={() => toggleCheck(id)}
+        />
         <p htmlFor={id}>{name}</p>
         <div className="todo__btns">
           <FiEdit

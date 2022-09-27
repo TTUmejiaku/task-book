@@ -1,6 +1,5 @@
 import React, { createRef } from "react";
 import { Formik, Form } from "formik";
-import "./resetPassword.scss";
 import { resetPasswordSchema } from "../../schemas/formSchema";
 import { TextInput } from "../../components/customInputs";
 import logo from "../../assets/logo.svg";

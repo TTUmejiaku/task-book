@@ -103,6 +103,18 @@ body {
       }
     }
   }
+
+  .user-account {
+    .profile {
+      background-color: hsla(215, 16%, 36%, 0.308);
+      border: 1px solid var(--dark-theme__card);
+      border-radius: f.rem(10);
+
+      .form {
+        background-color: transparent;
+      }
+    }
+  }
 }
 
 .container {

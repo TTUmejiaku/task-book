@@ -2,7 +2,7 @@ import React from "react";
 import "./successBoard.scss";
 import { BsThreeDots } from "react-icons/bs";
 
-const SuccessBoard = () => {
+const SuccessBoard = ({ taskCount, activeCount, completedCount }) => {
   return (
     <>
       <div className="successBoard">
@@ -12,23 +12,23 @@ const SuccessBoard = () => {
         </div>
         <div className="progress-wrapper">
           <div className="progress">
-            <small>Created</small>
+            <small>All</small>
             <div className="progress__circle">
-              <p>113</p>
+              <p>{taskCount}</p>
               <small>tasks</small>
             </div>
           </div>
           <div className="progress">
             <small>Completed</small>
             <div className="progress__circle">
-              <p>113</p>
+              <p>{completedCount}</p>
               <small>tasks</small>
             </div>
           </div>
           <div className="progress">
-            <small>Removed</small>
+            <small>Active</small>
             <div className="progress__circle">
-              <p>113</p>
+              <p>{activeCount}</p>
               <small>tasks</small>
             </div>
           </div>
