@@ -22,6 +22,7 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
         >
           {link.icon}
           <span>{link.name}</span>
+          <small>coming soon</small>
           <div className="marker"></div>
         </NavLink>
       ))}

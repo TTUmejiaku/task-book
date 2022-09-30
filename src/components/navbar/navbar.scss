@@ -45,6 +45,12 @@
     }
   }
 
+  @include b.mq-up(large) {
+    .toggle {
+      display: none;
+    }
+  }
+
   .btn {
     outline: none;
     display: flex;

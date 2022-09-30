@@ -8,7 +8,7 @@
   position: fixed;
   background: var(--light-theme__white);
   inset: 0 0 0 0;
-  z-index: 100;
+  z-index: 1;
 
   @include b.mq-up(large) {
     width: 15%;
@@ -41,6 +41,11 @@
       color: var(--light-theme__dark);
       text-decoration: none;
       position: relative;
+
+      small {
+        font-size: f.rem(9);
+        color: var(--pri__yellow);
+      }
 
       &.active {
         .marker {
