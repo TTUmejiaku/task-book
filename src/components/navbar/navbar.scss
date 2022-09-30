@@ -9,6 +9,42 @@
   margin-top: f.rem(20);
   position: relative;
 
+  @include b.mq-down(large) {
+    .toggle {
+      cursor: pointer;
+      background: none;
+      display: block;
+
+      .hamburger {
+        height: f.rem(3);
+        width: f.rem(25);
+        background-color: var(--pri__cyan);
+        // background-color: var(--light-theme__dark);
+        display: block;
+        transform-origin: 0 0;
+        transition: transform 400ms ease-in-out;
+        border-radius: f.rem(10);
+      }
+
+      .hamburger:not(:first-child) {
+        margin-top: f.rem(5);
+      }
+
+      &.showSidebar {
+        .hamburger:nth-child(1) {
+          transform: translate(1px, -1px) rotate(45deg);
+        }
+        .hamburger:nth-child(2) {
+          opacity: 0;
+          transform: translateX(15px);
+        }
+        .hamburger:nth-child(3) {
+          transform: translate(-1px, 1px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
   .btn {
     outline: none;
     display: flex;

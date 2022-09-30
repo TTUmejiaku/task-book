@@ -1,6 +1,15 @@
 @use "../../scss/breakpoints.scss" as b;
 @use "../../scss/functions.scss" as f;
 
+.toggle-menu-overlay {
+  background-color: transparent;
+  width: 100vw;
+  height: 150vh;
+  inset: 0 0 0 0;
+  position: absolute;
+  z-index: 10;
+}
+
 .toggle-menu {
   position: absolute;
   top: 120%;

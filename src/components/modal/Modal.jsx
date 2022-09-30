@@ -41,7 +41,8 @@ const Modal = ({ addTask, editTask }) => {
     toggleModalAndIsEditing();
   };
 
-  function clearAddTaskTemplateFormData() {
+  function clearAddTaskTemplateFormData(e) {
+    e.stopPropagation();
     toggleModal();
     setFormData({
       task: "",
@@ -50,7 +51,9 @@ const Modal = ({ addTask, editTask }) => {
       priority: "",
     });
   }
-  function clearEditTaskTemplateFormData() {
+  function clearEditTaskTemplateFormData(e) {
+    e.stopPropagation();
+
     toggleModalAndIsEditing();
     setNewFormData({
       task: "",
@@ -61,7 +64,11 @@ const Modal = ({ addTask, editTask }) => {
   }
 
   const addTaskTemplate = (
-    <div className="dark-overlay">
+    <>
+      <div
+        className="dark-overlay"
+        onClick={clearAddTaskTemplateFormData}
+      ></div>
       <div className="modal ">
         <h3 className="title">Add a new task</h3>
 
@@ -133,11 +140,15 @@ const Modal = ({ addTask, editTask }) => {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 
   const editTaskTemplate = (
-    <div className="dark-overlay">
+    <>
+      <div
+        className="dark-overlay"
+        onClick={clearEditTaskTemplateFormData}
+      ></div>
       <div className="modal ">
         <h3 className="title">Edit task</h3>
 
@@ -206,7 +217,7 @@ const Modal = ({ addTask, editTask }) => {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 
   return <>{isEditing ? editTaskTemplate : addTaskTemplate}</>;

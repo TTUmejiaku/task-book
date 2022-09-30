@@ -8,7 +8,7 @@ import ModalContext from "../../contexts/ModalContext";
 import { ToggleMenu } from "../index";
 import { MdOutlineLightMode } from "react-icons/md";
 
-const Navbar = ({ darkMode, toggleDarkMode }) => {
+const Navbar = ({ darkMode, toggleDarkMode, showSidebar, toggleSidebar }) => {
   const { toggleModal } = useContext(ModalContext);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -19,6 +19,15 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   return (
     <>
       <nav className="navbar container">
+        <button
+          className={showSidebar ? "toggle showSidebar" : "toggle"}
+          onClick={toggleSidebar}
+        >
+          <span className="hamburger"></span>
+          <span className="hamburger"></span>
+          <span className="hamburger"></span>
+        </button>
+
         <button className="btn" onClick={toggleModal}>
           <IoMdAddCircleOutline className="icon circle-plus" />
           New task
@@ -35,7 +44,12 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           <p>Have a good day, Sally</p>
           <img src={avatar} alt="" />
           <IoIosArrowDown className="icon arrow-down" onClick={toggleMenu} />
-          {showMenu && <ToggleMenu toggleDarkMode={toggleDarkMode} />}
+          {showMenu && (
+            <ToggleMenu
+              toggleDarkMode={toggleDarkMode}
+              toggleMenu={toggleMenu}
+            />
+          )}
         </div>
       </nav>
     </>

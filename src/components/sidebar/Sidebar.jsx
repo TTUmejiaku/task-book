@@ -6,7 +6,7 @@ import { NavLink, Link } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
 import { useUserAuthContext } from "../../contexts/AuthContext";
 
-const Sidebar = () => {
+const Sidebar = ({ showSidebar, toggleSidebar }) => {
   const { logOut } = useUserAuthContext();
 
   const sidebarLinks = links.map((item) => (
@@ -34,9 +34,9 @@ const Sidebar = () => {
 
   return (
     <>
-      <aside className="sidebar">
+      <aside className={showSidebar ? "sidebar show-nav" : "sidebar"}>
         <Link to="/dashboard">
-          <img src={logo} alt="Tasks Logo" />
+          <img src={logo} alt="Tasks Logo" onClick={toggleSidebar} />
         </Link>
         {sidebarLinks}
         <div className="logout" onClick={handleLogout}>

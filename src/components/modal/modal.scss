@@ -5,7 +5,6 @@
   background-color: rgba(0, 0, 0, 0.2);
   width: 100vw;
   height: 150vh;
-  z-index: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -24,6 +23,7 @@
   max-width: f.rem(700);
   width: 95vw;
   border-radius: f.rem(10);
+  z-index: 100;
 
   .title {
     color: var(--pri__cyan);
