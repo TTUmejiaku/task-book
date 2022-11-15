@@ -80,6 +80,24 @@
         width: 70%;
       }
 
+      &__password {
+        position: relative;
+
+        .btn--password {
+          position: absolute;
+          background: transparent;
+          top: 55%;
+          right: 7%;
+          translate: 50% -50%;
+          cursor: pointer;
+
+          .eye-icon {
+            font-size: 26px;
+            color: hsla(240, 27%, 22%, 0.335);
+          }
+        }
+      }
+
       &__field,
       &__error,
       &__label {

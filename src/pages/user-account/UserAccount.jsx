@@ -117,7 +117,7 @@ const UserAccount = () => {
               />
               <TextInput
                 label="Your password:"
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Password"
                 ref={passwordRef}
