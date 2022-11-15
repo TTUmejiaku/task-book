@@ -78,12 +78,14 @@ const Login = () => {
                 placeholder="E-mail"
                 ref={emailRef}
               />
+
               <TextInput
                 type="text"
                 name="password"
                 placeholder="Password"
                 ref={passwordRef}
               />
+
               <button
                 disabled={isSubmitting}
                 type="submit"
